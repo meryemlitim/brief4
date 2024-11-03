@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul class="navbar">
+          <li><a class="nav_item" href="index.html">Home</a></li>
+          <li><a class="nav_item" href="favorite">My favorites</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="title1">
+        <h1>One Piece</h1>
+    </div>
+    <section class="container2">
+        
+        <div class="movie_detail">
+            <div class="detail_img">
+                <img src="brief4_img/one piece2.jpeg" alt="img">
+            </div>
+            <div class="detail_text">
+                <p><span class="bold">Création</span>  : Eiichiro Oda</p>
+                <p><span class="bold">Catégorie</span> : Animation, Aventure</p>
+                <p><span class="bold">Durée </span>: 23 minutes</p>
+                <p><span class="bold">Synopsis </span>: Luffy et son équipage s’apprêtent à assister à un festival de musique attendu avec impatience. La chanteuse la plus populaire du monde, Uta, va monter sur scène pour la première fois. Celle qui n’est autre que la fille du légendaire pirate Shanks Le Roux va révéler la puissance exceptionnelle de sa voix qui pourrait bien changer le monde…</p>
+              
+                <div class="star">
+                    <svg  onclick="yellow1()" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path id="star1"  d="m233-120 65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Z"/></svg>
+                    <svg onclick="yellow2()" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path  id="star2"  d="m233-120 65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Z"/></svg>
+                    <svg onclick="yellow3()" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path  id="star3"  d="m233-120 65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Z"/></svg>
+                    <svg onclick="yellow4()" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path  id="star4"  d="m233-120 65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Z"/></svg>
+                    <svg onclick="yellow5()" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path  id="star5"  d="m233-120 65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Z"/></svg>
+
+                </div>
+                <button onclick="add_like()" class="like_btn" >
+                  <img src="brief4_img/thumbs-up.png" alt="">
+                  <span id="quantity">0</span>
+                </button>
+            </div>
+        </div>
+         
+
+    </section>
+    
+    
+    <div class="comment-section">
+      <h2>Add Comment</h2>
+      <textarea id="commentInput" placeholder="Type your comment here..." rows="4" cols="50"></textarea><br>
+      <button id="submitComment">Submit</button>
+
+      <h3>Comments:</h3>
+      <div id="commentsList"></div>
+  </div>
+   
+    <footer>
+      <div class="footer_item">
+        <a href="index.html"><h5>Home</h5> </a>
+        <a href="#"><h5>My favorites</h5> </a>
+        <div class="all_footer_img">
+          <img class="footer_img" src="brief4_img/facebook.png" alt="" />
+          <img class="footer_img" src="brief4_img/instagram.png" alt="" />
+          <img class="footer_img" src="brief4_img/youtube.png" alt="" />
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+      const submitCommentButton = document.getElementById("submitComment");
+      const commentsList = document.getElementById("commentsList");
+
+      submitCommentButton.addEventListener("click", function() {
+          const commentInput = document.getElementById("commentInput");
+          const newComment = commentInput.value;
+
+          if (newComment.trim() !== "") {
+              const commentDiv = document.createElement("div");
+              commentDiv.textContent = newComment;
+              commentsList.appendChild(commentDiv);
+              commentInput.value = ""; // Clear the input field
+          } else {
+              alert("Please enter a comment before submitting.");
+          }
+      });
+  </script>
+
+  </body>
+  
+</html>
